@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ManagerPerformanceStatistics</string>
+    <string name="login_text">login</string>
+    <string name="password_text">password</string>
+    <string name="entrance_text">Entrance</string>
+    <string name="welcome_image">Welcome_image</string>
 </resources>
