@@ -4,6 +4,7 @@ import android.text.format.DateFormat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.managerperformancestatistics.locator.locateLazy
+import com.example.managerperformancestatistics.model.Account.Account
 import com.example.managerperformancestatistics.model.AccountsRepository
 import com.example.managerperformancestatistics.model.room.AccountEntity
 import kotlinx.coroutines.delay
@@ -27,16 +28,18 @@ class MainViewModel: ViewModel() {
         }
     }
 
-    fun saveAccount(account: AccountEntity) {
-            viewModelScope.launch { repository.createAccount(account =account ) }
+    fun saveAccount(account: Account) {
+            viewModelScope.launch {
+                val accountE = createAccount(account = account)
+                repository.createAccount(account = accountE ) }
         }
 
     fun delete(account: AccountEntity) {
         viewModelScope.launch { repository.delete(account =account ) }
     }
 
-    private fun createAccount(account: AccountEntity) = AccountEntity(
-        id = account.id,
+     private fun createAccount(account: Account): AccountEntity = AccountEntity(
+        id = 0,
         email = account.email,
         username = account.username,
         password = account.password,
