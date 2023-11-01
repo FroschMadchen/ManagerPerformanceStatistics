@@ -34,9 +34,14 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures{
+        viewBinding = true 
+    }
 }
 
 dependencies {
+    implementation ("androidx.fragment:fragment-ktx:1.6.1")
 
     val coroutines_version = "1.7.1"
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version")

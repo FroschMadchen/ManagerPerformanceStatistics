@@ -6,4 +6,7 @@
     <string name="welcome_image">Welcome_image</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email_text">email</string>
+    <string name="registration_btn">registration</string>
+    <string name="registration_text">Registraton final</string>
 </resources>
