@@ -7,6 +7,7 @@
     tools:context=".presentation.screen.MenuFragment">
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
         android:layout_height="0dp"

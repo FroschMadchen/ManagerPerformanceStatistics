@@ -12,4 +12,10 @@ class AccountsRepository(
     fun getById(id:Long): AccountEntity = dao.getById(accountId =id )
     suspend fun delete(account: AccountEntity) = dao.delete(account)
     suspend fun createAccount(account: AccountEntity) = dao.createAccount(account)
+
+    suspend fun findByEmail(username:String) = dao.findByEmail(username)
+ /*  suspend fun  authenticateUser(username:String, password:String,email:String):Boolean {
+        val user = dao.findByEmail(email)
+       return password == user.password
+   }*/
 }

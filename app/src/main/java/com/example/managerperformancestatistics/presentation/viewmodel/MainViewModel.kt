@@ -50,4 +50,9 @@ class MainViewModel: ViewModel() {
         DateFormat.format("hh:mm:ss, MMM dd, yyyy", Date()).toString()
     private fun <T> Flow<T>.asLiveDataFlow() =
         shareIn(viewModelScope, SharingStarted.Eagerly, replay = 1)
+
+ /*   suspend fun  authenticateUser(username: String, password: String):Boolean {
+        val user = repository.findByEmail(username)
+        return password == user.password
+    }*/
 }

@@ -5,6 +5,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.example.managerperformancestatistics.model.room.Tuples.AccountsSignInTuples
 import kotlinx.coroutines.flow.Flow
 @Dao
 interface AccountsDao {
@@ -17,6 +18,9 @@ interface AccountsDao {
 
     @Query("SELECT * FROM accounts") // получить всё
     fun getAll(): Flow<List<AccountEntity?>>
+
+    @Query("SELECT id, password FROM ACCOUNTS WHERE username =:username") // sing in
+    suspend fun findByEmail(username:String):AccountsSignInTuples
 
     @Delete
     suspend fun delete(account: AccountEntity):Unit

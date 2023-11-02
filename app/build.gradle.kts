@@ -42,6 +42,7 @@ android {
 
 dependencies {
     implementation ("androidx.fragment:fragment-ktx:1.6.1")
+    implementation("androidx.media3:media3-common:1.1.1")
 
     val coroutines_version = "1.7.1"
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version")

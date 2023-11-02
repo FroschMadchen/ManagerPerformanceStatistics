@@ -13,10 +13,18 @@
         <action
             android:id="@+id/action_entranceFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_entranceFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.example.managerperformancestatistics.presentation.screen.RegistrationFragment"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration" />
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.managerperformancestatistics.presentation.screen.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" />
 </navigation>
