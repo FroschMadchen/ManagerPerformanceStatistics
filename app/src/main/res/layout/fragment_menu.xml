@@ -6,12 +6,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.screen.MenuFragment">
 
-    <FrameLayout
+
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frameLayout"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
-        android:layout_height="0dp"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="651dp"
+        android:layout_weight="1"
+        app:defaultNavHost="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:navGraph="@navigation/navigation_"
+        tools:ignore="MissingConstraints" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"

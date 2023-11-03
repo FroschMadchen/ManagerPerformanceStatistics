@@ -31,7 +31,8 @@ class MainViewModel: ViewModel() {
     fun saveAccount(account: Account) {
             viewModelScope.launch {
                 val accountE = createAccount(account = account)
-                repository.createAccount(account = accountE ) }
+                 repository.createAccount(account = accountE )
+            }
         }
 
     fun delete(account: AccountEntity) {

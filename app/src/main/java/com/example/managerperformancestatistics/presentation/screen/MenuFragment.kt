@@ -6,6 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
+import com.example.managerperformancestatistics.R
 
 import com.example.managerperformancestatistics.databinding.FragmentMenuBinding
 import com.example.managerperformancestatistics.presentation.screen.BottomNavigationFrasments.ConcreteFragment
@@ -19,12 +23,6 @@ class MenuFragment : Fragment() {
 
     private var binding: FragmentMenuBinding? = null
 
-    var bottom: BottomNavigationView? = null
-    var frame: FrameLayout? = null
-    val fragHome = ConcreteFragment()
-    val fragSupp = MetalFragment()
-    val fragDown = StatisticFragment()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,24 +34,21 @@ class MenuFragment : Fragment() {
 
         views {
 
-            bottom?.setOnItemSelectedListener { item ->
-                val transaction = childFragmentManager.beginTransaction()
+            binding?.bottomNavigation?.setOnItemSelectedListener { item ->
+
                 when (item.itemId) {
-                    com.example.managerperformancestatistics.R.id.metal -> transaction.replace(
-                        com.example.managerperformancestatistics.R.id.frameLayout, fragHome)
-                    com.example.managerperformancestatistics.R.id.concrete -> transaction.replace(
-                        com.example.managerperformancestatistics.R.id.frameLayout,fragSupp)
-                    com.example.managerperformancestatistics.R.id.statistics -> transaction.replace(
-                        com.example.managerperformancestatistics.R.id.frameLayout,fragDown, "fragDown")
+                    R.id.concreteFragment -> findNavController().navigate(R.id.action_menuFragment_to_concreteFragment)
+                    R.id.metalFragment -> findNavController().navigate(R.id.action_menuFragment_to_metalFragment)
+                    R.id.statisticFragment -> findNavController().navigate(R.id.action_menuFragment_to_statisticFragment)
                 }
-                transaction.commit()
                 true
             }
-
         }
     }
-
-
 }
+
+
+
+
 
 

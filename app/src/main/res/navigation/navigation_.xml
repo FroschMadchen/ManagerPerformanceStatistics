@@ -21,10 +21,44 @@
         android:id="@+id/registrationFragment"
         android:name="com.example.managerperformancestatistics.presentation.screen.RegistrationFragment"
         android:label="fragment_registration"
-        tools:layout="@layout/fragment_registration" />
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.example.managerperformancestatistics.presentation.screen.MenuFragment"
         android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" />
-</navigation>
+        app:startDestination="@id/statisticFragment"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_menuFragment_to_concreteFragment"
+            app:destination="@id/concreteFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_metalFragment"
+            app:destination="@id/metalFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_statisticFragment"
+            app:destination="@id/statisticFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/concreteFragment"
+        android:name="com.example.managerperformancestatistics.presentation.screen.BottomNavigationFrasments.ConcreteFragment"
+        android:label="fragment_concrete"
+        tools:layout="@layout/fragment_concrete" />
+    <fragment
+        android:id="@+id/metalFragment"
+        android:name="com.example.managerperformancestatistics.presentation.screen.BottomNavigationFrasments.MetalFragment"
+        android:label="fragment_metal"
+        tools:layout="@layout/fragment_metal" />
+    <fragment
+        android:id="@+id/statisticFragment"
+        android:name="com.example.managerperformancestatistics.presentation.screen.BottomNavigationFrasments.StatisticFragment"
+        android:label="fragment_statistic"
+        tools:layout="@layout/fragment_statistic" />
+        <action
+            android:id="@+id/action_global_entranceFragment"
+            app:destination="@id/entranceFragment" />
+    </navigation>

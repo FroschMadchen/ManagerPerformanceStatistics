@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.example.managerperformancestatistics.R
 import com.example.managerperformancestatistics.databinding.FragmentRegistrationBinding
 import com.example.managerperformancestatistics.model.Account.Account
 import com.example.managerperformancestatistics.model.room.AccountEntity
@@ -32,13 +34,24 @@ class RegistrationFragment : Fragment() {
 
         views {
             btnRegistration.setOnClickListener{
-                val username = usernameEdit.text.toString().takeIf { it.isNotEmpty() }?: return@setOnClickListener
-                val email = emailEdit.text.toString().takeIf{ it.isNotEmpty()}?: return@setOnClickListener
-                val password = passwordEdit.text.toString().takeIf{ it.isNotEmpty()}?: return@setOnClickListener
-                viewModel.saveAccount(Account(email,username,password))
+                val username = usernameEdit.text.toString()/*.takeIf { it.isNotEmpty() }?: return@setOnClickListener*/
+                val email = emailEdit.text.toString()
+                val password = passwordEdit.text.toString()
+                if(username.isNotEmpty()||email.isNotEmpty()||password.isNotEmpty()){
+                    viewModel.saveAccount(Account(email,username,password))
+                    mController.navigate(R.id.action_registrationFragment_to_menuFragment)
+                } else{
+                    Toast.makeText(
+                        requireActivity(),
+                        "Нельзя оставлять поле пустым!",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                usernameEdit.text.clear()
+                emailEdit.text.clear()
+                passwordEdit.text.clear()
+
             }
-
-
         }
 
 
