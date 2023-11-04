@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 
 class AuthenticateViewModel : ViewModel() {
     private val _navigateToMenu = MutableLiveData<Boolean>()
-    val navigationToMenu:LiveData<Boolean>
+    val navigationToMenu: LiveData<Boolean>
         get() = _navigateToMenu
 
     private val repository: AccountsRepository by locateLazy()
@@ -27,7 +27,7 @@ class AuthenticateViewModel : ViewModel() {
         shareIn(viewModelScope, SharingStarted.Eagerly, replay = 1)
 
 
-    fun  authenticateUser(username: String, password: String) {
+    fun authenticateUser(username: String, password: String) {
         try {
             viewModelScope.launch(Dispatchers.IO) {
 
@@ -39,11 +39,14 @@ class AuthenticateViewModel : ViewModel() {
                 }
             }
         } catch (e: Exception) {
-            Log.e("Exception","${e.toString()}")
+            Log.e("Exception", "${e.toString()}")
         }
 
-        fun onNavigationHandler() {
-            _navigateToMenu.value = false
-        }
+
+    }
+
+    fun onNavigationHandler() {
+        _navigateToMenu.value = false
     }
 }
+

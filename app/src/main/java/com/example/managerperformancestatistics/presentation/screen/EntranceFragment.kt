@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -40,6 +41,8 @@ class EntranceFragment : Fragment() {
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
             mController = findNavController()
+            (activity as AppCompatActivity).supportActionBar?.title = "Shopping List"
+            (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
             views {
              btnRegistration.setOnClickListener{

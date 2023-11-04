@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
@@ -28,9 +29,16 @@ class RegistrationFragment : Fragment() {
     private fun <T> views(block: FragmentRegistrationBinding.() -> T): T? = binding?.block()
 
 
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mController = findNavController()
+        views{
+            (activity as AppCompatActivity).supportActionBar?.title = "Shopping List"
+            (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        }
 
         views {
             btnRegistration.setOnClickListener{
