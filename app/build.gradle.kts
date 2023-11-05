@@ -41,6 +41,9 @@ android {
 }
 
 dependencies {
+
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+
     implementation ("androidx.fragment:fragment-ktx:1.6.1")
     implementation("androidx.media3:media3-common:1.1.1")
 

@@ -9,4 +9,8 @@
     <string name="email_text">email</string>
     <string name="registration_btn">registration</string>
     <string name="registration_text">Registraton final</string>
+
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">Close Navigation Drawer</string>
+
 </resources>

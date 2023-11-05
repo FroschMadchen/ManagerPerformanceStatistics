@@ -10,7 +10,7 @@ import com.example.managerperformancestatistics.R
 import com.example.managerperformancestatistics.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var mToolbar: Toolbar
+    lateinit var toolbar: Toolbar
     private lateinit var mNavConverter: NavController
     private var _binding: ActivityMainBinding? = null
 
@@ -27,13 +27,13 @@ class MainActivity : AppCompatActivity() {
         }*/
         mNavConverter = Navigation.findNavController(this, R.id.nav_host_fragment)
 
-        mToolbar = mBinding.toolbar
-        setSupportActionBar(mToolbar)
+        toolbar = mBinding.toolbar
+        setSupportActionBar(toolbar)
         title = "sdjd"
-        mToolbar.menu
+        toolbar.menu
 
 
-        mToolbar.setOnMenuItemClickListener { item->
+        toolbar.setOnMenuItemClickListener { item->
             when(item.itemId){
                 R.id.menu_exit ->{
                     finish()
