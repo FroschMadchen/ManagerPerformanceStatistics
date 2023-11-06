@@ -5,4 +5,5 @@
     <dimen name="margen_top_20dp">20dp</dimen>
     <dimen name="margen_top_90dp">90</dimen>
     <dimen name="margin_top_160dp">160dp</dimen>
+    <dimen name="margin_item_10dp">10dp</dimen>
 </resources>

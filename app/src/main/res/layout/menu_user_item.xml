@@ -17,13 +17,41 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="@dimen/margen_top_20dp"
+        android:fontFamily="sans-serif-condensed-medium"
         android:text="Name Surname"
-        android:textSize="@dimen/margen_top_20dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/user_image" />
+
+    <TextView
+        android:id="@+id/postTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_top_20dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="post:"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.368"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_name" />
+
+    <TextView
+        android:id="@+id/postUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margen_top_20dp"
+        android:text="admin"
+        android:textSize="@dimen/margen_top_20dp"
+        android:fontFamily="sans-serif-condensed-medium"
+       android:layout_marginStart="@dimen/margin_item_10dp"
+        app:layout_constraintStart_toEndOf="@id/postTV"
+        app:layout_constraintTop_toBottomOf="@id/user_name" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

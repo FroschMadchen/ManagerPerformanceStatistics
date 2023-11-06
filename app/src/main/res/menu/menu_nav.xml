@@ -6,29 +6,29 @@
 
 
 
-    <item android:title="post"
+    <item android:title=""
         android:id="@+id/nameUserMenu"
         >
 
         <menu>
     <item
-        android:id="@+id/info_app"
-        android:icon="@drawable/ic_exit"
-        android:title="name"/>
-    <item
         android:id="@+id/edit_ak_d"
-        android:icon="@drawable/ic_exit"
-        android:title="name"/>
+        android:icon="@drawable/ic_edit"
+        android:title="Edit your account"/>
+    <item
+        android:id="@+id/info_app"
+        android:icon="@drawable/ic_info"
+        android:title="About the application "/>
 
     <item
         android:id="@+id/remove_d"
-        android:icon="@drawable/ic_exit"
-        android:title="name"/>
+        android:icon="@drawable/ic_delete"
+        android:title="Delete your account"/>
 
     <item
         android:id="@+id/exit_d"
         android:icon="@drawable/ic_exit"
-        android:title="name"/>
+        android:title="Exit"/>
 
         </menu>
     </item>

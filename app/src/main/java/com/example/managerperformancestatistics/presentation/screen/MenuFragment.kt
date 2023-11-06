@@ -36,8 +36,6 @@ class MenuFragment : Fragment(),NavigationView.OnNavigationItemSelectedListener 
         super.onViewCreated(view, savedInstanceState)
 
         views {
-
-
             mToolbar = binding!!.toolbar1
 
             (activity as AppCompatActivity).setSupportActionBar(mToolbar)
@@ -54,21 +52,17 @@ class MenuFragment : Fragment(),NavigationView.OnNavigationItemSelectedListener 
             toggle.syncState()
 
 
-            if (savedInstanceState == null) {
+           if (savedInstanceState == null) {
                 (activity as AppCompatActivity).supportFragmentManager.beginTransaction()
                     .replace(R.id.frameLayout, StatisticFragment()).commit()
-                navigationView.setCheckedItem(R.id.edit_ak_d)
+                    //   navigationView.setCheckedItem(R.id.edit_ak_d)
             }
-
-
-
-            navigationView.setNavigationItemSelectedListener {
+            /*navigationView.setNavigationItemSelectedListener {
                 when(it.itemId){
 
                 }
                 true
-            }
-
+            }*/
             binding?.bottomNavigation?.setOnItemSelectedListener { item ->
 
                 when (item.itemId) {
@@ -85,7 +79,7 @@ class MenuFragment : Fragment(),NavigationView.OnNavigationItemSelectedListener 
         }
     }
     private fun replaceFragment(fragment: Fragment) {
-        val fragmentManager = childFragmentManager
+        val fragmentManager = (activity as AppCompatActivity).supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.frameLayout, fragment)
         fragmentTransaction.commit()
