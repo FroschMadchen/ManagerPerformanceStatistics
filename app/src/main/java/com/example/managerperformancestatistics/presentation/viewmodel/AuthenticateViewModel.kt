@@ -1,13 +1,12 @@
 package com.example.managerperformancestatistics.presentation.viewmodel
 
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.managerperformancestatistics.locator.locateLazy
-import com.example.managerperformancestatistics.model.AccountsRepository
+import com.example.managerperformancestatistics.model.accounts.AccountsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.SharingStarted

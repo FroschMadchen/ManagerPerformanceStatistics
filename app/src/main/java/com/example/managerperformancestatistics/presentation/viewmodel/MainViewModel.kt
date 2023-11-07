@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.managerperformancestatistics.locator.locateLazy
 import com.example.managerperformancestatistics.model.Account.Account
-import com.example.managerperformancestatistics.model.AccountsRepository
-import com.example.managerperformancestatistics.model.room.AccountEntity
+import com.example.managerperformancestatistics.model.accounts.AccountsRepository
+import com.example.managerperformancestatistics.model.accounts.room.entities.AccountEntity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.SharingStarted

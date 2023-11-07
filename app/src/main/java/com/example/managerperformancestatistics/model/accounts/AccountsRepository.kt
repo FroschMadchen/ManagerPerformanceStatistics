@@ -1,6 +1,6 @@
-package com.example.managerperformancestatistics.model
+package com.example.managerperformancestatistics.model.accounts
 
-import com.example.managerperformancestatistics.model.room.AccountEntity
+import com.example.managerperformancestatistics.model.accounts.room.entities.AccountEntity
 import com.example.managerperformancestatistics.model.room.AccountsDataBase
 import kotlinx.coroutines.flow.Flow
 

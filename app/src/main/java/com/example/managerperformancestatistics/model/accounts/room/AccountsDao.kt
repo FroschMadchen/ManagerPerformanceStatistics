@@ -5,6 +5,8 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Transaction
+import com.example.managerperformancestatistics.model.accounts.room.entities.AccountEntity
 import com.example.managerperformancestatistics.model.room.Tuples.AccountsSignInTuples
 import kotlinx.coroutines.flow.Flow
 @Dao
@@ -24,4 +26,8 @@ interface AccountsDao {
 
     @Delete
     suspend fun delete(account: AccountEntity):Unit
+
+   /* @Transaction
+    @Query("SELECT * FROM accounts")
+    fun getUsersAndLibraries(): List<UserAndProject>*/
 }

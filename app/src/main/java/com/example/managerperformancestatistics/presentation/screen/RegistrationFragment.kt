@@ -13,7 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.managerperformancestatistics.R
 import com.example.managerperformancestatistics.databinding.FragmentRegistrationBinding
 import com.example.managerperformancestatistics.model.Account.Account
-import com.example.managerperformancestatistics.model.room.AccountEntity
+import com.example.managerperformancestatistics.model.accounts.room.entities.AccountEntity
 import com.example.managerperformancestatistics.presentation.viewmodel.MainViewModel
 
 class RegistrationFragment : Fragment() {

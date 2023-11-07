@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.Context
 import com.example.managerperformancestatistics.locator.ServiceLocator
 import com.example.managerperformancestatistics.locator.locate
-import com.example.managerperformancestatistics.model.AccountsRepository
+import com.example.managerperformancestatistics.model.accounts.AccountsRepository
 import com.example.managerperformancestatistics.model.room.AccountsDataBase
 import com.example.managerperformancestatistics.model.room.AccountsDataBaseImpl
 

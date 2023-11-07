@@ -44,10 +44,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    override fun onSupportNavigateUp(): Boolean {
+ /*   override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
-    }
+    }*/
 
     override fun onDestroy() {
         super.onDestroy()

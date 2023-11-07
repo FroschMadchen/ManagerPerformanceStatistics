@@ -1,4 +1,4 @@
-package com.example.managerperformancestatistics.model.room
+package com.example.managerperformancestatistics.model.accounts.room.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -20,3 +20,5 @@ data class AccountEntity(
     val password: String,
     @ColumnInfo(name = "create_at") val createdAt: String
 )
+
+
