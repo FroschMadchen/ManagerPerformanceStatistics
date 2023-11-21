@@ -3,6 +3,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="violet">#E3CCF6</color>
-    <color name="ziol">#73B47C</color>
+    <color name="sign_in_btn_text">#F98727</color>
+    <color name="sign_up_btn_bak">#4F6891</color>
+    <color name="gray30">#E7EBF1</color>
+    <color name="dark_gray_active_btn">#3C4049</color>
+    <color name="gray40_text_not_active">#B8C4DB</color>
+    <color name="Red_text">#F0303F</color>
+    <color name="btn_bak">#E9072A64</color>
+    <color name="backgrund">#F98727</color>
 
 </resources>

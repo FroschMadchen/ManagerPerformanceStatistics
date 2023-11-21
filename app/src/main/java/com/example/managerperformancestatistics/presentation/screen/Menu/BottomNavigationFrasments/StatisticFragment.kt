@@ -1,4 +1,4 @@
-package com.example.managerperformancestatistics.presentation.screen.BottomNavigationFrasments
+package com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import com.example.managerperformancestatistics.R
 
 
-class ConcreteFragment : Fragment() {
+class StatisticFragment : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +21,7 @@ class ConcreteFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_concrete, container, false)
+        return inflater.inflate(R.layout.fragment_statistic, container, false)
     }
 
 

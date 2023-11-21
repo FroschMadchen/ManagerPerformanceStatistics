@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/metalFragment"
-    tools:context=".presentation.screen.BottomNavigationFrasments.MetalFragment">
+    tools:context=".presentation.screen.Menu.BottomNavigationFrasments.MetalFragment">
 
     <TextView
         android:id="@+id/titleMetal"

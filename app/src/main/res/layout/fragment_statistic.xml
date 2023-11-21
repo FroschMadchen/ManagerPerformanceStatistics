@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/statisticFragment"
-    tools:context=".presentation.screen.BottomNavigationFrasments.StatisticFragment">
+    tools:context=".presentation.screen.Menu.BottomNavigationFrasments.StatisticFragment">
 
 
     <TextView

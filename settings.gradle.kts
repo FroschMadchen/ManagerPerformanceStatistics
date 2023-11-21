@@ -10,9 +10,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url  = uri ("https://jitpack.io") }
     }
 }
 
 rootProject.name = "ManagerPerformanceStatistics"
 include(":app")
- 
+include() ":otpview-compose"
+include() ":otpview"

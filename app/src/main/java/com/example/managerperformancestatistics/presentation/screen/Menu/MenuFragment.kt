@@ -1,11 +1,10 @@
-package com.example.managerperformancestatistics.presentation.screen
+package com.example.managerperformancestatistics.presentation.screen.Menu
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -14,9 +13,9 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.example.managerperformancestatistics.R
 import com.example.managerperformancestatistics.databinding.FragmentMenuBinding
-import com.example.managerperformancestatistics.presentation.screen.BottomNavigationFrasments.ConcreteFragment
-import com.example.managerperformancestatistics.presentation.screen.BottomNavigationFrasments.MetalFragment
-import com.example.managerperformancestatistics.presentation.screen.BottomNavigationFrasments.StatisticFragment
+import com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.ConcreteFragment
+import com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.MetalFragment
+import com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.StatisticFragment
 import com.google.android.material.navigation.NavigationView
 
 

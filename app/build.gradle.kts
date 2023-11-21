@@ -46,10 +46,21 @@ android {
     buildFeatures{
         viewBinding = true 
     }
+    sourceSets {
+        getByName("main") {
+            assets {
+                srcDirs("src\\main\\assets", "src\\main\\assets")
+            }
+        }
+    }
 }
 
 dependencies {
 
+    //OtpView
+    implementation ("com.github.mukeshsolanki.android-otpview-pinview:otpview:3.1.0")
+
+    //circle image view
     implementation ("de.hdodenhof:circleimageview:3.1.0")
 
     implementation ("androidx.fragment:fragment-ktx:1.6.1")

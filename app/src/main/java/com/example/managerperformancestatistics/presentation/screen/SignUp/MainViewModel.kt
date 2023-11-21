@@ -1,4 +1,4 @@
-package com.example.managerperformancestatistics.presentation.viewmodel
+package com.example.managerperformancestatistics.presentation.screen.SignUp
 
 import android.text.format.DateFormat
 import androidx.lifecycle.ViewModel

@@ -1,4 +1,4 @@
-package com.example.managerperformancestatistics.presentation.viewmodel
+package com.example.managerperformancestatistics.presentation.screen.SignIn
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -20,11 +20,9 @@ class AuthenticateViewModel : ViewModel() {
 
     private val repository: AccountsRepository by locateLazy()
 
-
     val notes = repository.getAll().asLiveDataFlow()
     private fun <T> Flow<T>.asLiveDataFlow() =
         shareIn(viewModelScope, SharingStarted.Eagerly, replay = 1)
-
 
     fun authenticateUser(username: String, password: String) {
         try {
@@ -40,10 +38,7 @@ class AuthenticateViewModel : ViewModel() {
         } catch (e: Exception) {
             Log.e("Exception", "${e.toString()}")
         }
-
-
     }
-
     fun onNavigationHandler() {
         _navigateToMenu.value = false
     }

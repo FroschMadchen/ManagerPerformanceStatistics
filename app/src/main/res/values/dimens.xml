@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="text_size_middle">28sp</dimen>
-    <dimen name="margin_top_40dp">40dp</dimen>
-    <dimen name="margen_top_20dp">20dp</dimen>
-    <dimen name="margen_top_90dp">90</dimen>
-    <dimen name="margin_top_160dp">160dp</dimen>
-    <dimen name="margin_item_10dp">10dp</dimen>
+    <dimen name="text_size_big">28sp</dimen>
+    <dimen name="text_size_little">16sp</dimen>
+    <dimen name="text_size_middle">26sp</dimen>
+    <dimen name="margin_top_middle">40dp</dimen>
+
+    <dimen name="padding_bottom">10dp</dimen>
+    <dimen name="large_text">30sp</dimen>
+    <dimen name="padding_start">5dp</dimen>
+    <dimen name="padding">10dp</dimen>
+    <dimen name="main_pedding_start_end">16dp</dimen>
+    <dimen name="corner_radius">12dp</dimen>
+    <dimen name="padding_item_image">3dp</dimen>
+
+    <dimen name="lateral_padding">16dp</dimen>
+    <dimen name="padding_inner">5dp</dimen>
+    <dimen name="padding_inner_middle">10dp</dimen>
+    <dimen name="margin_top_big">50dp</dimen>
 </resources>

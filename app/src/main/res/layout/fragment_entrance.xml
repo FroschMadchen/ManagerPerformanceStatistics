@@ -1,90 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presentation.screen.EntranceFragment">
+    tools:context=".presentation.screen.SignIn.EntranceFragment">
 
-    <EditText
-        android:id="@+id/loginEdit"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/login_text"
-        android:text="@string/login_text"
-        android:textSize="@dimen/text_size_middle"
-        android:layout_marginTop="@dimen/margen_top_20dp"
+        android:layout_marginTop="@dimen/margin_top_middle"
+        android:background="@drawable/box_info"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_inner_middle"
+        android:paddingStart="@dimen/lateral_padding"
+        android:paddingEnd="@dimen/lateral_padding"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        android:autofillHints="username" />
+        app:layout_constraintTop_toBottomOf="@+id/companyInfo">
 
-    <EditText
-        android:id="@+id/passwordEdit"
-        android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:padding="@dimen/padding_inner"
+            android:text="@string/enter_name"
+            android:textColor="@color/sign_up_btn_bak"
+            android:textSize="@dimen/text_size_little" />
+
+        <EditText
+            android:id="@+id/loginEdit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:autofillHints="username"
+            android:background="@drawable/box_edit_text"
+            android:ems="10"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:hint="@string/name_surname"
+            android:padding="@dimen/padding_inner_middle"
+            android:textSize="@dimen/text_size_middle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:padding="@dimen/padding_inner"
+            android:text="@string/enter_password"
+            android:textColor="@color/sign_up_btn_bak"
+            android:textSize="@dimen/text_size_little" />
+
+        <com.mukeshsolanki.OtpView
+            android:id="@+id/passwordEdit"
+            style="@style/OtpWidget.OtpView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:itemBackground="@drawable/box_password"
+            android:textAllCaps="true"
+            android:textColor="@android:color/black"
+            app:OtpHideLineWhenFilled="true"
+            app:OtpItemCount="6"
+            app:OtpItemSpacing="@dimen/padding_inner"
+            app:OtpState_filled="true" />
+
+
+        <Button
+            android:id="@+id/btn_entrance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_middle"
+            android:background="@drawable/box_btn"
+            android:fontFamily="@font/sf_pro_display_regular"
+            android:padding="@dimen/padding_inner_middle"
+            android:text="@string/sign_in"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_big" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/companyInfo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="@string/password_text"
-        android:text="@string/password_text"
-        android:textSize="@dimen/text_size_middle"
-        android:layout_marginTop="@dimen/margen_top_20dp"
+        android:layout_marginTop="@dimen/margin_top_middle"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/padding_inner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/loginEdit"
-        android:autofillHints="password"
-        />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/btn_entrance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/entrance_text"
-        android:textSize="@dimen/text_size_middle"
-        android:background="@color/ziol"
-        android:layout_marginTop="50dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordEdit"
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/padding"
+            android:columnCount="2"
+            android:rowCount="2">
 
-        />
-    <Button
-        android:id="@+id/btn_registration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/registration_btn"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:textSize="@dimen/text_size_middle"
-        android:layout_marginTop="@dimen/margen_top_20dp"
-        android:background="@color/ziol"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_entrance"
-        />
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="100dp"
+                android:layout_rowSpan="2"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="@dimen/padding"
+                android:src="@drawable/icon_company" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="65dp"
-        app:srcCompat="@drawable/image_2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/welcome_image" />
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/sf_pro_display_bold"
+                android:text="@string/name_company"
+                android:textColor="@color/sign_in_btn_text"
+                android:textSize="@dimen/text_size_middle" />
+
+            <TextView
+                android:layout_width="221dp"
+                android:layout_height="79dp"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/sf_pro_display_regular"
+                android:text="@string/info_company"
+                android:textColor="@color/sign_up_btn_bak"
+                android:textSize="@dimen/text_size_little" />
+
+        </GridLayout>
+
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginTop="264dp"
+        android:layout_marginTop="@dimen/margin_top_big"
         android:alpha="0.1"
         android:contentDescription="@string/welcome_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/companyInfo"
         app:srcCompat="@drawable/image_6" />
 
 

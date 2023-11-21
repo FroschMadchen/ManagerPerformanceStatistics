@@ -1,27 +1,26 @@
-package com.example.managerperformancestatistics.presentation.screen
+package com.example.managerperformancestatistics.presentation.screen.SignUp
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.example.managerperformancestatistics.R
 import com.example.managerperformancestatistics.databinding.FragmentRegistrationBinding
 import com.example.managerperformancestatistics.model.Account.Account
-import com.example.managerperformancestatistics.model.accounts.room.entities.AccountEntity
-import com.example.managerperformancestatistics.presentation.viewmodel.MainViewModel
+
 
 class RegistrationFragment : Fragment() {
 
     private val viewModel: MainViewModel by viewModels()
 
     private var binding: FragmentRegistrationBinding? = null
-    lateinit var mController:NavController
+    lateinit var mController: NavController
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,6 +33,7 @@ class RegistrationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mController = findNavController()
+
         views{
             (activity as AppCompatActivity).supportActionBar?.title = "Shopping List"
             (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -46,8 +46,8 @@ class RegistrationFragment : Fragment() {
                 val email = emailEdit.text.toString()
                 val password = passwordEdit.text.toString()
                 if(username.isNotEmpty()||email.isNotEmpty()||password.isNotEmpty()){
-                    viewModel.saveAccount(Account(email,username,password))
-                    mController.navigate(R.id.action_registrationFragment_to_menuFragment)
+                    viewModel.saveAccount(Account(email, username, password))
+                        // mController.navigate(R.id.action_registrationFragment_to_menuFragment)
                 } else{
                     Toast.makeText(
                         requireActivity(),
@@ -69,22 +69,3 @@ class RegistrationFragment : Fragment() {
 
 //        viewModel.newCaption.onEach(::renderCaption).launchIn(lifecycleScope)
 }
-
-private fun saveNote() {
-//    views {
-//        val noteText = addNoteEditText.text.toString().takeIf { it.isNotBlank() } ?: return@views
-//
-//        viewModel.save(noteText)
-//
-//        addNoteEditText.setText("")
-//    }
-}
-
-private fun renderCaption(caption: String) {
-//        views { captionTextView.text = caption }
-}
-
-private fun renderAccounts(notes: List<AccountEntity>) {
-//        adapter?.submitList(notes)
-}
-
