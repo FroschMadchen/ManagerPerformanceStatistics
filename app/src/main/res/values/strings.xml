@@ -35,6 +35,8 @@
     <string name="name_surname">Имя Фамилия</string>
     <string name="enter_password">Введите свой пароль:</string>
     <string name="name_company">ООО «Кристалл»</string>
-    <string name="info_company">Производство архитектурного фасадного декора</string>
+    <string name="info_company">Производство архитектурного \n фасадного декора</string>
+    <string name="example_number">123456</string>
+    <string name="image">image</string>
 
 </resources>

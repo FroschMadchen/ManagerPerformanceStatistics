@@ -1,6 +1,5 @@
 package com.example.managerperformancestatistics.presentation.screen.SignIn
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import com.example.managerperformancestatistics.MainActivity
 import com.example.managerperformancestatistics.R
 import com.example.managerperformancestatistics.databinding.FragmentEntranceBinding
 import kotlinx.coroutines.CoroutineScope
