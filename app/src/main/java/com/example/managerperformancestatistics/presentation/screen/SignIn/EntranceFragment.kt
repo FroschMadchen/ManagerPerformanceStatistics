@@ -48,11 +48,15 @@ class EntranceFragment : Fragment() {
                     }
                 })
             _binding?.apply {
+                var password = ""
+                passwordEdit.setOtpCompletionListener {
+                    password = it.toString()
+                }
                 btnEntrance.setOnClickListener {
                     CoroutineScope(Dispatchers.IO).launch {
                         viewModel.authenticateUser(
                             username = loginEdit.text.toString(),
-                            password = passwordEdit.text.toString()
+                            password = password
                         )
                     }
                 }

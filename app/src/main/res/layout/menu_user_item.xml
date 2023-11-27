@@ -9,10 +9,9 @@
         android:id="@+id/user_image"
         android:layout_width="140dp"
         android:layout_height="140dp"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/images"
+        android:layout_marginTop="@dimen/margin_top_middle"
+        android:src="@drawable/foto_traub"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,12 +19,11 @@
         android:id="@+id/user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margen_top_20dp"
+        android:layout_marginTop="@dimen/margin_top_little"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="Name Surname"
-        android:textSize="20sp"
+        android:text="@string/name_surname_draw"
+        android:textSize="@dimen/text_size_middle_one"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/user_image" />
 
@@ -33,24 +31,21 @@
         android:id="@+id/postTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margen_top_20dp"
         android:fontFamily="sans-serif-condensed-medium"
-        android:text="post:"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.368"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/post"
+        android:textSize="@dimen/text_size_middle_one"
+        app:layout_constraintStart_toEndOf="@id/user_name"
+        app:layout_constraintStart_toStartOf="@+id/user_name"
         app:layout_constraintTop_toBottomOf="@id/user_name" />
 
     <TextView
         android:id="@+id/postUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margen_top_20dp"
-        android:text="admin"
-        android:textSize="@dimen/margen_top_20dp"
         android:fontFamily="sans-serif-condensed-medium"
-       android:layout_marginStart="@dimen/margin_item_10dp"
+        android:text="@string/admin"
+        android:layout_marginStart="@dimen/padding_inner"
+        android:textSize="@dimen/text_size_middle_one"
         app:layout_constraintStart_toEndOf="@id/postTV"
         app:layout_constraintTop_toBottomOf="@id/user_name" />
 

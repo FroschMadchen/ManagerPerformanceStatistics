@@ -153,6 +153,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/companyInfo"
         app:srcCompat="@drawable/image_6" />
-
-
+    
 </androidx.constraintlayout.widget.ConstraintLayout>

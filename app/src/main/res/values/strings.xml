@@ -38,5 +38,8 @@
     <string name="info_company">Производство архитектурного \n фасадного декора</string>
     <string name="example_number">123456</string>
     <string name="image">image</string>
+    <string name="name_surname_draw">Name Surname</string>
+    <string name="admin">Admin</string>
+    <string name="post">post:</string>
 
 </resources>

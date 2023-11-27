@@ -25,18 +25,17 @@ class AuthenticateViewModel : ViewModel() {
         shareIn(viewModelScope, SharingStarted.Eagerly, replay = 1)
 
     fun authenticateUser(username: String, password: String) {
-        try {
-            viewModelScope.launch(Dispatchers.IO) {
 
-                val user = repository.findByEmail(username)
+            viewModelScope.launch(Dispatchers.IO) {
+                try {val user = repository.findByEmail(username)
                 if (password == user.password) {
                     viewModelScope.launch(Dispatchers.Main) {
                         _navigateToMenu.value = true
                     }
                 }
-            }
-        } catch (e: Exception) {
-            Log.e("Exception", "${e.toString()}")
+            }catch (e: Exception) {
+                    Log.e("Exception", "$e")
+        }
         }
     }
     fun onNavigationHandler() {
