@@ -9,7 +9,7 @@
         android:id="@+id/user_image"
         android:layout_width="140dp"
         android:layout_height="140dp"
-        android:layout_marginTop="@dimen/margin_top_middle"
+        android:layout_marginTop="@dimen/top_big"
         android:src="@drawable/foto_traub"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -35,9 +35,9 @@ class MainViewModel: ViewModel() {
             }
         }
 
-    fun delete(account: AccountEntity) {
+/*    fun delete(account: AccountEntity) {
         viewModelScope.launch { repository.delete(account =account ) }
-    }
+    }*/
 
      private fun createAccount(account: Account): AccountEntity = AccountEntity(
         id = 0,

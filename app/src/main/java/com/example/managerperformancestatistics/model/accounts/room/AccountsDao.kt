@@ -24,8 +24,8 @@ interface AccountsDao {
     @Query("SELECT id, password FROM ACCOUNTS WHERE username =:username") // sing in
     suspend fun findByEmail(username:String):AccountsSignInTuples
 
-    @Delete
-    suspend fun delete(account: AccountEntity):Unit
+    @Query("DELETE FROM accounts WHERE id = :accountId")
+    suspend fun delete(accountId: Long)
 
    /* @Transaction
     @Query("SELECT * FROM accounts")

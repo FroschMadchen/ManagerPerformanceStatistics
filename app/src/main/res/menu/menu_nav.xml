@@ -1,38 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
 
-
-    <item android:title=""
+    <item
         android:id="@+id/nameUserMenu"
-        >
+        android:title="">
 
         <menu>
-    <item
-        android:id="@+id/edit_ak_d"
-        android:icon="@drawable/ic_edit"
-        android:title="Edit your account"/>
-    <item
-        android:id="@+id/info_app"
-        android:icon="@drawable/ic_info"
-        android:title="About the application "/>
+            <item
+                android:id="@+id/edit_ak_d"
+                android:icon="@drawable/ic_edit"
+                android:title="Edit your account" />
+            <item
+                android:id="@+id/info_app"
+                android:icon="@drawable/ic_info"
+                android:title="About the application " />
 
-    <item
-        android:id="@+id/remove_d"
-        android:icon="@drawable/ic_delete"
-        android:title="Delete your account"/>
+            <item
+                android:id="@+id/remove_d"
+                android:icon="@drawable/ic_delete"
+                android:title="Delete your account" />
 
-    <item
-        android:id="@+id/exit_d"
-        android:icon="@drawable/ic_exit"
-        android:title="Exit"/>
+            <item
+                android:id="@+id/exit_d"
+                android:icon="@drawable/ic_exit"
+                android:title="Exit" />
 
         </menu>
     </item>
-
 
 
 </menu>

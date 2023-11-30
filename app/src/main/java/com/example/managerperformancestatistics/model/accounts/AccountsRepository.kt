@@ -10,7 +10,7 @@ class AccountsRepository(
     private val dao get() = db.accountsDao
     fun getAll(): Flow<List<AccountEntity?>> = dao.getAll()
     fun getById(id:Long): AccountEntity = dao.getById(accountId =id )
-    suspend fun delete(account: AccountEntity) = dao.delete(account)
+    suspend fun delete(account: Long) = dao.delete(account)
     suspend fun createAccount(account: AccountEntity) = dao.createAccount(account)
 
     suspend fun findByEmail(username:String) = dao.findByEmail(username)

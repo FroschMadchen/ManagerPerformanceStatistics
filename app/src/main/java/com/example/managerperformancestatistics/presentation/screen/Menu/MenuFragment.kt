@@ -11,39 +11,42 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.example.managerperformancestatistics.R
 import com.example.managerperformancestatistics.databinding.FragmentMenuBinding
 import com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.ConcreteFragment
 import com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.MetalFragment
 import com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.StatisticFragment
+import com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.ViewModelTest
+import com.example.managerperformancestatistics.presentation.screen.SignIn.AuthenticateViewModel
 import com.google.android.material.navigation.NavigationView
 
 
-class MenuFragment : Fragment(),NavigationView.OnNavigationItemSelectedListener {
+class MenuFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener {
+
+    private val viewModel: ViewModelTest by viewModels()
 
     private var binding: FragmentMenuBinding? = null
-    private lateinit var mToolbar: Toolbar
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
+    private val num:Long = 11
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View = FragmentMenuBinding.inflate(inflater).also { binding = it }.root
+
     private fun <T> views(block: FragmentMenuBinding.() -> T): T? = binding?.block()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         views {
-            mToolbar = binding!!.toolbar1
 
-            (activity as AppCompatActivity).setSupportActionBar(mToolbar)
-            (activity as AppCompatActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
             val toggle = ActionBarDrawerToggle(
                 requireActivity(),
                 drawerLayout,
-                mToolbar,
+                toolbar1,
                 R.string.open_nav,
                 R.string.close_nav
             )
@@ -51,10 +54,10 @@ class MenuFragment : Fragment(),NavigationView.OnNavigationItemSelectedListener 
             toggle.syncState()
 
 
-           if (savedInstanceState == null) {
+            if (savedInstanceState == null) {
                 (activity as AppCompatActivity).supportFragmentManager.beginTransaction()
                     .replace(R.id.frameLayout, StatisticFragment()).commit()
-                    //   navigationView.setCheckedItem(R.id.edit_ak_d)
+                //  navigationView.setCheckedItem(R.id.edit_ak_d)
             }
             /*navigationView.setNavigationItemSelectedListener {
                 when(it.itemId){
@@ -68,10 +71,6 @@ class MenuFragment : Fragment(),NavigationView.OnNavigationItemSelectedListener 
                     R.id.concrete -> replaceFragment(ConcreteFragment())
                     R.id.metal -> replaceFragment(MetalFragment())
                     R.id.statistics -> replaceFragment(StatisticFragment())
-
-                    else ->{
-
-                    }
                 }
                 true
             }
@@ -84,18 +83,21 @@ class MenuFragment : Fragment(),NavigationView.OnNavigationItemSelectedListener 
         fragmentTransaction.commit()
     }
 
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        TODO("Not yet implemented")
+       when (item.itemId){
+           R.id.remove_d -> viewModel.deleteAcc(num)
+       }
+        return true
     }
 
-   fun onBackPressed() {
+    fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
         } else {
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
     }
+
     @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
@@ -107,6 +109,7 @@ class MenuFragment : Fragment(),NavigationView.OnNavigationItemSelectedListener 
                 }
                 return true
             }
+
             else -> return super.onOptionsItemSelected(item)
         }
     }

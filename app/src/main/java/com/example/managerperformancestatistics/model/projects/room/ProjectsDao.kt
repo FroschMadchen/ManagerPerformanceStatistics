@@ -18,7 +18,6 @@ interface ProjectsDao {
     suspend fun createAccount(project: ProjectEntity)
 
     @Delete
-    suspend fun delete(account: ProjectEntity):Unit
-
+    suspend fun delete(account: ProjectEntity)
 
 }

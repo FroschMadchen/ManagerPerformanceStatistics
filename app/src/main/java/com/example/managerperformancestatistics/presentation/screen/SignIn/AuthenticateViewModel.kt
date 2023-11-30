@@ -20,7 +20,7 @@ class AuthenticateViewModel : ViewModel() {
 
     private val repository: AccountsRepository by locateLazy()
 
-    val notes = repository.getAll().asLiveDataFlow()
+   // val notes = repository.getAll().asLiveDataFlow()
     private fun <T> Flow<T>.asLiveDataFlow() =
         shareIn(viewModelScope, SharingStarted.Eagerly, replay = 1)
 
