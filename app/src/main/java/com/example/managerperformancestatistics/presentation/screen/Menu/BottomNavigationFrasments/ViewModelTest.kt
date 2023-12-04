@@ -19,11 +19,11 @@ class ViewModelTest : ViewModel() {
     private val repository: AccountsRepository by locateLazy()
 
 
-    fun deleteAcc(id: Long) {
+    fun deleteAccountVM(id: Long) {
 
         viewModelScope.launch(Dispatchers.IO) {
             try {
-               repository.delete(id)
+                repository.delete(id)
                 viewModelScope.launch(Dispatchers.Main) {
                     _navigateToMenu.value = true
                 }
@@ -31,8 +31,11 @@ class ViewModelTest : ViewModel() {
             } catch (e: Exception) {
                 Log.e("Exception", "$e")
             }
+
         }
     }
+
+
 
     fun onNavigationHandler() {
         _navigateToMenu.value = false

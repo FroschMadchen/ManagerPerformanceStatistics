@@ -24,14 +24,16 @@ class AuthenticateViewModel : ViewModel() {
     private fun <T> Flow<T>.asLiveDataFlow() =
         shareIn(viewModelScope, SharingStarted.Eagerly, replay = 1)
 
-    fun authenticateUser(username: String, password: String) {
-
+    fun authenticateUser(username: String, password: String){
+        var id:Long
             viewModelScope.launch(Dispatchers.IO) {
                 try {val user = repository.findByEmail(username)
                 if (password == user.password) {
+                    id= user.id
                     viewModelScope.launch(Dispatchers.Main) {
                         _navigateToMenu.value = true
                     }
+
                 }
             }catch (e: Exception) {
                     Log.e("Exception", "$e")

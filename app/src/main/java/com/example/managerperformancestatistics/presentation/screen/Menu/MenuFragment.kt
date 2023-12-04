@@ -1,10 +1,12 @@
 package com.example.managerperformancestatistics.presentation.screen.Menu
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -12,6 +14,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.example.managerperformancestatistics.APP_ACTIVITY
 import com.example.managerperformancestatistics.R
 import com.example.managerperformancestatistics.databinding.FragmentMenuBinding
 import com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.ConcreteFragment
@@ -29,7 +32,7 @@ class MenuFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
     private var binding: FragmentMenuBinding? = null
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navigationView: NavigationView
-    private val num:Long = 11
+    private val id:Long = 1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -84,9 +87,6 @@ class MenuFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-       when (item.itemId){
-           R.id.remove_d -> viewModel.deleteAcc(num)
-       }
         return true
     }
 
@@ -100,19 +100,40 @@ class MenuFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
 
     @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
+        return when (item.itemId) {
             android.R.id.home -> {
                 if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
                     drawerLayout.closeDrawer(GravityCompat.START)
                 } else {
                     drawerLayout.openDrawer(GravityCompat.START)
                 }
+                true
+            }
+            R.id.remove_d -> {
+                showAddListDialog(id)
                 return true
             }
 
-            else -> return super.onOptionsItemSelected(item)
+            else -> super.onOptionsItemSelected(item)
         }
     }
+
+    fun showAddListDialog(id: Long) { // диалоговое окно, создание списка
+        binding = FragmentMenuBinding.inflate(LayoutInflater.from(APP_ACTIVITY))
+        val dialog = AlertDialog.Builder(APP_ACTIVITY)
+            .setView(binding!!.root)
+            .setTitle("Вы точно хотите удалить аккаунт?")
+            .setPositiveButton("Да") { _, _ ->
+                deleteAccount(id)
+                Toast.makeText(APP_ACTIVITY,"Аккаунт удалён",Toast.LENGTH_SHORT).show()
+            }
+            .setNegativeButton("Отмена", null)
+            .create()
+
+        dialog.show()
+    }
+    fun deleteAccount(id:Long) = viewModel.deleteAccountVM(id)
+
 }
 
 

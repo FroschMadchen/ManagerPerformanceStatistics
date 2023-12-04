@@ -9,6 +9,7 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.example.managerperformancestatistics.model.accounts.room.entities.AccountEntity
 import com.example.managerperformancestatistics.model.projects.entities.ProjectEntity
+import com.example.managerperformancestatistics.model.projects.room.ProjectsDao
 
 @Database(
     version = 2,
@@ -20,13 +21,15 @@ import com.example.managerperformancestatistics.model.projects.entities.ProjectE
         AutoMigration(from = 1, to = 2)
     ]
 )
-abstract class AccountsDataBaseImpl : RoomDatabase(), AccountsDataBase {
+abstract class AppDataBase : RoomDatabase(), AccountsDataBase {
+ /*   abstract fun getAccountsDao(): AccountsDao
+    abstract fun getProjectDao(): ProjectsDao*/
 
-    companion object {
+      companion object {
         private const val DATABASE_NAME = "accounts_db"
 
-        fun create(context: Context): AccountsDataBaseImpl {
-            return Room.databaseBuilder(context, AccountsDataBaseImpl::class.java, DATABASE_NAME)
+        fun create(context: Context): AppDataBase {
+            return Room.databaseBuilder(context, AppDataBase::class.java, DATABASE_NAME)
                 .addMigrations(MIGRATION_1_2)
                 .build()
         }
