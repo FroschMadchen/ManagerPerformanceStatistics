@@ -26,14 +26,26 @@
         <action
             android:id="@+id/action_menuFragment_to_entranceFragment"
             app:destination="@id/entranceFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_createAccountFragment"
+            app:destination="@id/createAccountFragment" />
     </fragment>
     <fragment
         android:id="@+id/editAccountFragment"
-        android:name="com.example.managerperformancestatistics.presentation.screen.EditAccount.EditAccountFragment"
+        android:name="com.example.managerperformancestatistics.presentation.screen.ActionAccount.EditAccountFragment"
         android:label="fragment_edit_account"
         tools:layout="@layout/fragment_edit_account" >
         <action
             android:id="@+id/action_editAccountFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountFragment"
+        android:name="com.example.managerperformancestatistics.presentation.screen.ActionAccount.CreateAccountFragment"
+        android:label="fragment_create_account"
+        tools:layout="@layout/fragment_create_account" >
+        <action
+            android:id="@+id/action_createAccountFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
     </fragment>
 </navigation>

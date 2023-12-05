@@ -18,7 +18,7 @@ import kotlinx.coroutines.flow.Flow
 interface AccountsDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)//создание
-    suspend fun createAccount(accountDbEntity: AccountEntity)
+    suspend fun createAccount(account: AccountEntity)
 
     @Query("SELECT * FROM accounts WHERE id = :accountId") // получение по id
     fun getById(accountId: Long): AccountEntity

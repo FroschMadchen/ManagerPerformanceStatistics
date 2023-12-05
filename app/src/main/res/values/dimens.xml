@@ -20,4 +20,5 @@
     <dimen name="padding_inner_middle">10dp</dimen>
     <dimen name="margin_top_big">50dp</dimen>
     <dimen name="top_big">90dp</dimen>
+    <dimen name="padding_start_2">15dp</dimen>
 </resources>

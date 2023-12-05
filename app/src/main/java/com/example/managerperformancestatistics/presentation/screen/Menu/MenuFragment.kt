@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +27,7 @@ import com.example.managerperformancestatistics.presentation.screen.Menu.BottomN
 import com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.ViewModelTest
 import com.example.managerperformancestatistics.presentation.screen.SignIn.AuthenticateViewModel
 import com.example.managerperformancestatistics.presentation.screen.SignIn.ID
+import com.example.managerperformancestatistics.presentation.screen.SignIn.NAMEUSER
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.navigation.NavigationView
 
@@ -50,6 +52,11 @@ class MenuFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
         super.onViewCreated(view, savedInstanceState)
         mController = findNavController()
 
+        val headerView = navigationView.getHeaderView(0)
+        val textView = headerView.findViewById<TextView>(R.id.user_name)
+        textView.text = NAMEUSER
+
+
         views {
 
             val toggle = ActionBarDrawerToggle(
@@ -62,11 +69,13 @@ class MenuFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
             drawerLayout.addDrawerListener(toggle)
             toggle.syncState()
 
+
             if (savedInstanceState == null) {
                 (activity as AppCompatActivity).supportFragmentManager.beginTransaction()
                     .replace(R.id.frameLayout, StatisticFragment()).commit()
             }
             navigationView.setNavigationItemSelectedListener {
+
                 when (it.itemId) {
                     R.id.remove_d -> {
                         showAddListDialog(ID)
@@ -77,6 +86,11 @@ class MenuFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
 
                     R.id.edit_ak_d -> {
                         findNavController().navigate(R.id.action_menuFragment_to_editAccountFragment)
+                        true
+                    }
+
+                    R.id.create_user -> {
+                        findNavController().navigate(R.id.action_menuFragment_to_createAccountFragment)
                         true
                     }
 
@@ -121,13 +135,13 @@ class MenuFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
         }
     }
 
-    fun onBackPressed() {
+ /*   fun onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START)
         } else {
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
-    }
+    }*/
 
     @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

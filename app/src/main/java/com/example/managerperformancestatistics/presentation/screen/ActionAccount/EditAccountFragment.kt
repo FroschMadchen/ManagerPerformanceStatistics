@@ -1,4 +1,4 @@
-package com.example.managerperformancestatistics.presentation.screen.EditAccount
+package com.example.managerperformancestatistics.presentation.screen.ActionAccount
 
 import android.os.Bundle
 import android.view.LayoutInflater

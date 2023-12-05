@@ -18,6 +18,7 @@ import kotlinx.coroutines.launch
 import kotlin.properties.Delegates
 
 var ID by Delegates.notNull<Long>()
+var NAMEUSER by Delegates.notNull<String>()
 
 class AuthenticateViewModel : ViewModel() {
     private val _navigateToMenu = MutableLiveData<Boolean>()
@@ -37,6 +38,7 @@ class AuthenticateViewModel : ViewModel() {
                 val user = repository.findByEmail(username)
                 if (password == user.password) {
                     ID = user.id
+                    NAMEUSER = username
                     viewModelScope.launch(Dispatchers.Main) {
                         _navigateToMenu.value = true
                     }

@@ -8,7 +8,6 @@
     <item
         android:id="@+id/nameUserMenu"
         android:title="">
-
         <menu>
             <item
                 android:id="@+id/edit_ak_d"
@@ -21,8 +20,13 @@
 
             <item
                 android:id="@+id/remove_d"
-                android:icon="@drawable/ic_delete"
+                android:icon="@drawable/close_square"
                 android:title="Delete your account" />
+
+            <item
+                android:id="@+id/create_user"
+                android:icon="@drawable/emoji_happy"
+                android:title="Create Account" />
 
             <item
                 android:id="@+id/exit_d"
