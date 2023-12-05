@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.format.DateFormat
 import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         APP_ACTIVITY = this
 
 
+
         //   toolbar = binding.toolbar
         mNavConverter = Navigation.findNavController(this, R.id.nav_host_fragment)
         // setSupportActionBar(toolbar)
@@ -50,6 +52,10 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_exit, menu)
         return true
     }*/
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
     }
 
     private fun createCaption(): String =

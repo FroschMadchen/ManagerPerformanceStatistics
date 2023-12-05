@@ -20,5 +20,20 @@
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu">
 
+        <action
+            android:id="@+id/action_menuFragment_to_editAccountFragment"
+            app:destination="@id/editAccountFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_entranceFragment"
+            app:destination="@id/entranceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editAccountFragment"
+        android:name="com.example.managerperformancestatistics.presentation.screen.EditAccount.EditAccountFragment"
+        android:label="fragment_edit_account"
+        tools:layout="@layout/fragment_edit_account" >
+        <action
+            android:id="@+id/action_editAccountFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
     </fragment>
 </navigation>
