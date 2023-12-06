@@ -42,6 +42,11 @@ class AuthenticateViewModel : ViewModel() {
                     viewModelScope.launch(Dispatchers.Main) {
                         _navigateToMenu.value = true
                     }
+                } else {
+                    viewModelScope.launch(Dispatchers.Main) {
+                        Log.d("authenticateUser","password wrong")
+                        _navigateToMenu.value = false
+                    }
                 }
             } catch (e: Exception) {
                 Log.e("Exception", "$e")

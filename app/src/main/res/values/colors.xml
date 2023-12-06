@@ -11,6 +11,6 @@
     <color name="Red_text">#F0303F</color>
     <color name="btn_bak">#E9072A64</color>
     <color name="backgrund">#F98727</color>
-
+    <color name="button_enabled">#F1C49E</color>
 
 </resources>

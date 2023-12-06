@@ -52,12 +52,14 @@ class MenuFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
         super.onViewCreated(view, savedInstanceState)
         mController = findNavController()
 
-        val headerView = navigationView.getHeaderView(0)
-        val textView = headerView.findViewById<TextView>(R.id.user_name)
-        textView.text = NAMEUSER
+
 
 
         views {
+
+            val headerView = navigationView.getHeaderView(0)
+            val textView = headerView.findViewById<TextView>(R.id.user_name)
+            textView.text = NAMEUSER
 
             val toggle = ActionBarDrawerToggle(
                 requireActivity(),

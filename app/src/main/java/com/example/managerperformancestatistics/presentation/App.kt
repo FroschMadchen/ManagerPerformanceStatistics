@@ -17,9 +17,16 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
+        val appDatabase = AppDataBase.create(this)
+        ServiceLocator.register<Context>(this)
+        ServiceLocator.register<AccountsDataBase>(appDatabase)
+        ServiceLocator.register(AccountsRepository(locate()))
+
+/*
         ServiceLocator.register<Context>(this)
         ServiceLocator.register<AccountsDataBase>(AppDataBase.create(locate()))
        ServiceLocator.register(AccountsRepository(locate()))
+*/
 
     }
 }

@@ -3,6 +3,6 @@
     <solid android:color="@color/white" />
     <stroke
         android:width="2dp"
-        android:color="@color/dark_gray_active_btn" />
+        android:color="@color/Red_text" />
     <corners android:radius="5dp" />
 </shape>

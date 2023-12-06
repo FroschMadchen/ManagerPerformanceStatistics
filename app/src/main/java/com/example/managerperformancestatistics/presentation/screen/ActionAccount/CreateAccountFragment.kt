@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import com.example.managerperformancestatistics.MainActivity
 import com.example.managerperformancestatistics.R
 import com.example.managerperformancestatistics.databinding.FragmentCreateAccountBinding
 import com.example.managerperformancestatistics.model.Account.Account
@@ -18,6 +19,8 @@ import com.example.managerperformancestatistics.presentation.screen.SignUp.MainV
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+
+lateinit var PASSWORD: String
 
 class CreateAccountFragment : Fragment() {
 
@@ -39,29 +42,47 @@ class CreateAccountFragment : Fragment() {
         mController = findNavController()
 
         _binding?.apply {
-            var password = ""
-            passwordEdit.setOtpCompletionListener {
-                password = it.toString()
+
+            passwordEdit1.setOtpCompletionListener {
+                PASSWORD = it.toString()
             }
-            val userName = nameUser.text.toString()
-            val email = emailEdit.text.toString()
-            val accountUserNew = Account(username = userName, email = email, password = password)
-            Log.d("CreateViewModel", "saveAccount ${accountUserNew.password} -- ${accountUserNew.username}")
-            viewModel.navigationToMenu.observe(
-                viewLifecycleOwner,
-                Observer { shouldNavigation ->
-                    if (shouldNavigation) {
-                        viewModel.onNavigationHandler()
-                        findNavController().navigate(R.id.action_createAccountFragment_to_menuFragment)
-                    }
-                })
 
             btnRegistration.setOnClickListener {
+                val userName = nameUser1.text.toString()
+                val email = emailEdit1.text.toString()
+
+                Log.d("CreateAccountFragment", " password $PASSWORD")
                 CoroutineScope(Dispatchers.IO).launch {
-                    viewModel.saveAccount(accountNew = accountUserNew)
+                    viewModel.saveAccount(accountNew = Account(email, userName, PASSWORD))
+                    Log.d(
+                        "CreateAccountFragment",
+                        "DataNewAccount ($PASSWORD ) - ( $email ) - $userName"
+                    )
 
                 }
             }
         }
+
+        _binding.apply {
+            viewModel.navigationToMenu.observe(
+                viewLifecycleOwner
+            ) { shouldNavigation ->
+                if (shouldNavigation) {
+                    viewModel.onNavigationHandler()
+                    findNavController().navigate(R.id.action_createAccountFragment_to_menuFragment)
+                }
+            }
+        }
+    }
+
+
+    fun returnPassword(): String {
+        var password = ""
+        _binding?.apply {
+            passwordEdit1.setOtpCompletionListener {
+                password = it.toString()
+            }
+        }
+        return password
     }
 }
