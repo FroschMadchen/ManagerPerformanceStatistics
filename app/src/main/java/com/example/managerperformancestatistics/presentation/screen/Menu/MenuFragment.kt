@@ -96,6 +96,11 @@ class MenuFragment : Fragment(), NavigationView.OnNavigationItemSelectedListener
                         true
                     }
 
+                    R.id.exit_d ->{
+                        findNavController().navigate(R.id.action_menuFragment_to_entranceFragment)
+                        true
+                    }
+
                     else -> {
                         true
                     }

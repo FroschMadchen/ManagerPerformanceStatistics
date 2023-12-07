@@ -33,19 +33,37 @@ class AuthenticateViewModel : ViewModel() {
 
     @SuppressLint("SuspiciousIndentation")
     fun authenticateUser(username: String, password: String) {
+        Log.d("authenticateUser", "password wrong $password  $username")
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 val user = repository.findByEmail(username)
-                if (password == user.password) {
-                    ID = user.id
-                    NAMEUSER = username
+
+                if (user == null) {
                     viewModelScope.launch(Dispatchers.Main) {
-                        _navigateToMenu.value = true
+                        _navigateToMenu.value = false
                     }
                 } else {
-                    viewModelScope.launch(Dispatchers.Main) {
-                        Log.d("authenticateUser","password wrong")
-                        _navigateToMenu.value = false
+                    // Теперь user не null, можно использовать его методы
+                    Log.d("authenticateUser", "password wrong ${user.password}")
+
+                    if (user.password == null) {
+                        // Пароль пользователя тоже null
+                        viewModelScope.launch(Dispatchers.Main) {
+                            _navigateToMenu.value = false
+                        }
+                    } else if (password == user.password) {
+                        // Всё в порядке, пароль совпадает
+                        ID = user.id
+                        NAMEUSER = username
+                        viewModelScope.launch(Dispatchers.Main) {
+                            _navigateToMenu.value = true
+                        }
+                    } else {
+                        // Неправильный пароль
+                        viewModelScope.launch(Dispatchers.Main) {
+                            Log.d("authenticateUser", "password wrong")
+                            _navigateToMenu.value = false
+                        }
                     }
                 }
             } catch (e: Exception) {
