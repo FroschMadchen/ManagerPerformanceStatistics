@@ -56,6 +56,8 @@ android {
 }
 
 dependencies {
+    //Dots Indicator
+    implementation("com.tbuonomo:dotsindicator:5.0")
 
     //OtpView
     implementation ("com.github.mukeshsolanki.android-otpview-pinview:otpview:3.1.0")

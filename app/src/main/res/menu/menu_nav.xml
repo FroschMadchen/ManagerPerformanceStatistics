@@ -25,7 +25,7 @@
 
             <item
                 android:id="@+id/create_user"
-                android:icon="@drawable/emoji_happy"
+                android:icon="@drawable/ic_star_24"
                 android:title="Create Account" />
 
             <item

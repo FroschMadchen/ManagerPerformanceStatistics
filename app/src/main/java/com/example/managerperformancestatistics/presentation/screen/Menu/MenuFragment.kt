@@ -11,7 +11,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -21,14 +20,12 @@ import androidx.navigation.fragment.findNavController
 import com.example.managerperformancestatistics.APP_ACTIVITY
 import com.example.managerperformancestatistics.R
 import com.example.managerperformancestatistics.databinding.FragmentMenuBinding
-import com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.ConcreteFragment
-import com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.MetalFragment
-import com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.StatisticFragment
+import com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.concrete.ConcreteFragment
+import com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.metal.MetalFragment
+import com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.statistic.StatisticFragment
 import com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.ViewModelTest
-import com.example.managerperformancestatistics.presentation.screen.SignIn.AuthenticateViewModel
 import com.example.managerperformancestatistics.presentation.screen.SignIn.ID
 import com.example.managerperformancestatistics.presentation.screen.SignIn.NAMEUSER
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.navigation.NavigationView
 
 

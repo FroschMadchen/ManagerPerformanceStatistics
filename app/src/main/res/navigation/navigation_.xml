@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/editAccountFragment"
-        android:name="com.example.managerperformancestatistics.presentation.screen.ActionAccount.EditAccountFragment"
+        android:name="com.example.managerperformancestatistics.presentation.screen.ActionAccount.editAcc.EditAccountFragment"
         android:label="fragment_edit_account"
         tools:layout="@layout/fragment_edit_account" >
         <action
@@ -41,7 +41,7 @@
     </fragment>
     <fragment
         android:id="@+id/createAccountFragment"
-        android:name="com.example.managerperformancestatistics.presentation.screen.ActionAccount.CreateAccountFragment"
+        android:name="com.example.managerperformancestatistics.presentation.screen.ActionAccount.createAcc.CreateAccountFragment"
         android:label="fragment_create_account"
         tools:layout="@layout/fragment_create_account" >
         <action

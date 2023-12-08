@@ -1,4 +1,4 @@
-package com.example.managerperformancestatistics.presentation.screen.ActionAccount
+package com.example.managerperformancestatistics.presentation.screen.ActionAccount.createAcc
 
 import android.os.Bundle
 import android.util.Log
@@ -7,15 +7,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
-import com.example.managerperformancestatistics.MainActivity
 import com.example.managerperformancestatistics.R
 import com.example.managerperformancestatistics.databinding.FragmentCreateAccountBinding
 import com.example.managerperformancestatistics.model.Account.Account
-import com.example.managerperformancestatistics.presentation.screen.SignIn.AuthenticateViewModel
-import com.example.managerperformancestatistics.presentation.screen.SignUp.MainViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
