@@ -34,7 +34,7 @@ class ProjectConcreteAdapter(
     override fun onBindViewHolder(holder: ProjectItemViewHolder, position: Int) {
         val projectList = listOfLists[position]
         with(holder.binding) {
-            //holder.itemView.tag = projectList.id
+            holder.itemView.tag = projectList.id
             nameProject.text = projectList.nameProject
             nameManagerWork.text = projectList.nameManagerWork
             imageView
@@ -50,8 +50,9 @@ class ProjectConcreteAdapter(
 
     override fun onClick(view: View?) {
         val id = view?.tag as Int
+
         // Обработка клика на элементе списка
-        actionListener.openProject(id)
+        actionListener.openProject(id) //id
 
     }
 }

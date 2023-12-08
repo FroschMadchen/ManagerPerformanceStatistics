@@ -1,6 +1,6 @@
 package com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.concrete
 
-import android.R
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,6 +15,8 @@ import com.example.managerperformancestatistics.databinding.FragmentConcreteBind
 import com.example.managerperformancestatistics.databinding.FragmentMetalBinding
 import com.example.managerperformancestatistics.model.dataClasses.ProjectTitle
 import com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.metal.ActionListener
+import com.google.android.material.navigation.NavigationView
+import com.example.managerperformancestatistics.R
 
 
 class ConcreteFragment : Fragment() {
@@ -43,9 +45,9 @@ class ConcreteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         mController = findNavController()
 
-        listTitleProjectCon.add(ProjectTitle("Бетонные конструкция №1","Василькова В.В."))
-        listTitleProjectCon.add(ProjectTitle("Бетонные блоки","Измайлова В.С."))
-        listTitleProjectCon.add(ProjectTitle("Бетонный каркас мансарда","Бахчиванджи Ш.Г."))
+        listTitleProjectCon.add(ProjectTitle(12,"Бетонные конструкция №1","Василькова В.В."))
+        listTitleProjectCon.add(ProjectTitle(11,"Бетонные блоки","Измайлова В.С."))
+      /*  listTitleProjectCon.add(ProjectTitle("Бетонный каркас мансарда","Бахчиванджи Ш.Г."))
         listTitleProjectCon.add(ProjectTitle("Бетонная бляшка","Михалюк Д.Е."))
         listTitleProjectCon.add(ProjectTitle("Бетонные ставни, многоэтажка","Осипов В.Д."))
         listTitleProjectCon.add(ProjectTitle("Бетонные ограждения, гос","Булгариева З.Б."))
@@ -57,13 +59,15 @@ class ConcreteFragment : Fragment() {
         listTitleProjectCon.add(ProjectTitle("Бетонные ставни, многоэтажка","Осипов В.Д."))
         listTitleProjectCon.add(ProjectTitle("Бетонные ограждения, гос","Булгариева З.Б."))
         listTitleProjectCon.add(ProjectTitle("Бетонные клетки, цирк ебанный","Лёлкина Е.В."))
-
+*/
 
 
         adapter = ProjectConcreteAdapter(object : ActionListener {
+
+
             override fun openProject(id: Int) {
-                TODO("We open the project in the following fragment")
-                getInfoProjectConcreteID()
+                findNavController().navigate(R.id.action_menuFragment_to_infoProjectConcreteFragment)
+                //   getInfoProjectConcreteID()
             }
         },listTitleProjectCon)
 
@@ -71,8 +75,11 @@ class ConcreteFragment : Fragment() {
             recyclerViewConcrete.layoutManager = LinearLayoutManager(APP_ACTIVITY)
             recyclerViewConcrete.adapter = adapter
 
+
+
+
             val adapter: ArrayAdapter<String> = ArrayAdapter(APP_ACTIVITY,
-                R.layout.simple_spinner_item,arraySpinner)
+                android.R.layout.simple_spinner_item,arraySpinner)
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinner.adapter = adapter
         }

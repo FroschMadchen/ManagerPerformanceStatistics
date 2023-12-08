@@ -66,6 +66,7 @@ class CreateAccountFragment : Fragment() {
                 if (shouldNavigation) {
                     viewModel.onNavigationHandler()
                     findNavController().navigate(R.id.action_createAccountFragment_to_menuFragment)
+
                 }
             }
         }

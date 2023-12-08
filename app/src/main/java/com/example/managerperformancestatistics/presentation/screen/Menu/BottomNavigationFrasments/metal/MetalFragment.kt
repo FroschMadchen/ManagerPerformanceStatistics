@@ -36,9 +36,9 @@ class MetalFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         mController = findNavController()
 
-        listTitleProject.add(ProjectTitle("ООО 'ЧестныйСтрой'","Василькова В.В."))
-        listTitleProject.add(ProjectTitle("ООО 'НашеДело'","Жидова Ю.В."))
-        listTitleProject.add(ProjectTitle("ОAО 'Казанский Дом Культуры и творчества'","Самаритян У.Е."))
+        listTitleProject.add(ProjectTitle(11,"ООО 'ЧестныйСтрой'","Василькова В.В."))
+        listTitleProject.add(ProjectTitle(34,"ООО 'НашеДело'","Жидова Ю.В."))
+      /*  listTitleProject.add(ProjectTitle("ОAО 'Казанский Дом Культуры и творчества'","Самаритян У.Е."))
         listTitleProject.add(ProjectTitle("ООО 'Костакин'","Кошка Н.В."))
         listTitleProject.add(ProjectTitle("ООО 'Два Брата'","Зубин О.З."))
         listTitleProject.add(ProjectTitle("OOO 'Бахчианджи'","Ларенс О.В."))
@@ -50,7 +50,7 @@ class MetalFragment : Fragment() {
         listTitleProject.add(ProjectTitle("Металлические ставни, многоэтажка","Зубин О.З."))
         listTitleProject.add(ProjectTitle("Металлические ограждения, гос","Ларенс О.В."))
         listTitleProject.add(ProjectTitle("Металлическая клетка, цирк ебанный","Бичурин  М.В."))
-
+*/
 
 
         adapter = ProjectMetalAdapter(object :ActionListener{

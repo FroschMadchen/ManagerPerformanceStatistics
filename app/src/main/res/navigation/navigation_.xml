@@ -29,6 +29,12 @@
         <action
             android:id="@+id/action_menuFragment_to_createAccountFragment"
             app:destination="@id/createAccountFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_concreteFragment"
+            app:destination="@id/concreteFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_infoProjectConcreteFragment"
+            app:destination="@id/infoProjectConcreteFragment" />
     </fragment>
     <fragment
         android:id="@+id/editAccountFragment"
@@ -47,5 +53,26 @@
         <action
             android:id="@+id/action_createAccountFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_createAccountFragment_to_infoProjectConcreteFragment3"
+            app:destination="@id/infoProjectConcreteFragment" />
+        <action
+            android:id="@+id/action_createAccountFragment_to_concreteFragment"
+            app:destination="@id/concreteFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/concreteFragment"
+        android:name="com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.concrete.ConcreteFragment"
+        android:label="fragment_concrete"
+        tools:layout="@layout/fragment_concrete" >
+        <action
+            android:id="@+id/action_concreteFragment_to_infoProjectConcreteFragment"
+            app:destination="@id/infoProjectConcreteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoProjectConcreteFragment"
+        android:name="com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.concrete.InfoProjectConcreteFragment"
+        android:label="fragment_info_project_concrete"
+        tools:layout="@layout/fragment_info_project_concrete" />
+
 </navigation>
