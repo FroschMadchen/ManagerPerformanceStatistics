@@ -26,10 +26,6 @@ class ConcreteFragment : Fragment() {
     private var listTitleProjectCon = mutableListOf<ProjectTitle>()
     private var arraySpinner:Array<String> = arrayOf("Все проекты менеджера","Только проекты в процессе","По компании - заказчик")
 
-
-
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -74,6 +70,10 @@ class ConcreteFragment : Fragment() {
         _binding?.apply {
             recyclerViewConcrete.layoutManager = LinearLayoutManager(APP_ACTIVITY)
             recyclerViewConcrete.adapter = adapter
+
+            btnAddProjectConcrete.setOnClickListener {
+                findNavController().navigate(R.id.action_menuFragment_to_createProjectFragment)
+            }
 
 
 

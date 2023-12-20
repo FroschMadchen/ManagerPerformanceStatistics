@@ -64,6 +64,10 @@ class MetalFragment : Fragment() {
             recyclerViewMetal.layoutManager = LinearLayoutManager(APP_ACTIVITY)
             recyclerViewMetal.adapter = adapter
 
+            btnAddProjectMetal.setOnClickListener {
+                findNavController().navigate(R.id.action_menuFragment_to_createProjectFragment)
+            }
+
            val adapter:ArrayAdapter<String> = ArrayAdapter(APP_ACTIVITY,android.R.layout.simple_spinner_item,arraySpinner)
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinner.adapter = adapter

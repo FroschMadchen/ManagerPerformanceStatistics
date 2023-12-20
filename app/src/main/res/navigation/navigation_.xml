@@ -35,6 +35,12 @@
         <action
             android:id="@+id/action_menuFragment_to_infoProjectConcreteFragment"
             app:destination="@id/infoProjectConcreteFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_metalFragment2"
+            app:destination="@id/metalFragment2" />
+        <action
+            android:id="@+id/action_menuFragment_to_createProjectFragment"
+            app:destination="@id/createProjectFragment" />
     </fragment>
     <fragment
         android:id="@+id/editAccountFragment"
@@ -68,11 +74,31 @@
         <action
             android:id="@+id/action_concreteFragment_to_infoProjectConcreteFragment"
             app:destination="@id/infoProjectConcreteFragment" />
+        <action
+            android:id="@+id/action_concreteFragment_to_createProjectFragment"
+            app:destination="@id/createProjectFragment" />
     </fragment>
     <fragment
         android:id="@+id/infoProjectConcreteFragment"
         android:name="com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.concrete.InfoProjectConcreteFragment"
         android:label="fragment_info_project_concrete"
         tools:layout="@layout/fragment_info_project_concrete" />
+    <fragment
+        android:id="@+id/createProjectFragment"
+        android:name="com.example.managerperformancestatistics.presentation.screen.ActionProgect.createProject.CreateProjectFragment"
+        android:label="fragment_create_project"
+        tools:layout="@layout/fragment_create_project" />
+    <fragment
+        android:id="@+id/metalFragment2"
+        android:name="com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.metal.MetalFragment"
+        android:label="fragment_metal"
+        tools:layout="@layout/fragment_metal" >
+        <action
+            android:id="@+id/action_metalFragment2_to_infoProjectConcreteFragment"
+            app:destination="@id/infoProjectConcreteFragment" />
+        <action
+            android:id="@+id/action_metalFragment2_to_createProjectFragment"
+            app:destination="@id/createProjectFragment" />
+    </fragment>
 
 </navigation>
