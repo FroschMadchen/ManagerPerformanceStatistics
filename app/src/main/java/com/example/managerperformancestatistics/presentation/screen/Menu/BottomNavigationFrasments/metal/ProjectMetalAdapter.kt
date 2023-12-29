@@ -14,7 +14,7 @@ interface ActionListener {
 
 class ProjectMetalAdapter(
     private val actionListener: ActionListener,
-    private val listOfLists: MutableList<ProjectTitle>
+    private val listOfLists: List<ProjectTitle>
 ) : RecyclerView.Adapter<ProjectMetalAdapter.ProjectItemViewHolder>(), View.OnClickListener {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProjectItemViewHolder {

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +21,7 @@ class MetalFragment : Fragment() {
     private lateinit var mController: NavController
     private lateinit var adapter:ProjectMetalAdapter
     private var listTitleProject = mutableListOf<ProjectTitle>()
+    private val viewModel: MetalViewModel by viewModels()
     private var arraySpinner:Array<String> = arrayOf("Все проекты менеджера","Только проекты в процессе","По компании - заказчик")
 
     override fun onCreateView(
@@ -36,6 +38,8 @@ class MetalFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         mController = findNavController()
 
+
+
         listTitleProject.add(ProjectTitle(11,"ООО 'ЧестныйСтрой'","Василькова В.В."))
         listTitleProject.add(ProjectTitle(34,"ООО 'НашеДело'","Жидова Ю.В."))
       /*  listTitleProject.add(ProjectTitle("ОAО 'Казанский Дом Культуры и творчества'","Самаритян У.Е."))
@@ -51,14 +55,14 @@ class MetalFragment : Fragment() {
         listTitleProject.add(ProjectTitle("Металлические ограждения, гос","Ларенс О.В."))
         listTitleProject.add(ProjectTitle("Металлическая клетка, цирк ебанный","Бичурин  М.В."))
 */
-
+        val listProject = getAllProject()
 
         adapter = ProjectMetalAdapter(object :ActionListener{
             override fun openProject(id: Int) {
                 TODO("We open the project in the following fragment")
                 getInfoProjectID()
             }
-        },listTitleProject)
+        },listProject)
 
         _binding?.apply {
             recyclerViewMetal.layoutManager = LinearLayoutManager(APP_ACTIVITY)
@@ -77,4 +81,6 @@ class MetalFragment : Fragment() {
     private fun getInfoProjectID() {
         TODO("get Info Project by ID")
     }
+
+    private fun getAllProject():List<ProjectTitle> = viewModel.get()
 }

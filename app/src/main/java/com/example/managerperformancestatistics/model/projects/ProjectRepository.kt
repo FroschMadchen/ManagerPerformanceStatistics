@@ -1,5 +1,6 @@
 package com.example.managerperformancestatistics.model.projects
 
+import android.content.Context
 import androidx.room.Query
 import com.example.managerperformancestatistics.model.projects.entities.ProjectEntity
 import com.example.managerperformancestatistics.model.projects.room.ProjectsDao
@@ -8,15 +9,16 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 
 class ProjectRepository (
-    private val projectsDao: ProjectsDao,
-    private val ioDispatcher: CoroutineDispatcher
-    //private val db:AccountsDataBase
+  //  private val projectsDao: ProjectsDao,
+    //private val ioDispatcher: CoroutineDispatcher,
+    private val db:AccountsDataBase, // new
+ //   val context: Context //new
 ) {
-  //  private val dao get() = db.projectDao
+   private val dao get() = db.projectDao
 
-    fun getAll(): Flow<List<ProjectEntity>> = projectsDao.getAll()
+    fun getAll(): Flow<List<ProjectEntity>> = dao.getAll()
 
-   suspend fun create(projectNew: ProjectEntity) = projectsDao.createAccount(projectNew)
+   suspend fun create(projectNew: ProjectEntity) = dao.createAccount(projectNew)
 
-    suspend fun delete(project:ProjectEntity) = projectsDao.delete(project)
+    suspend fun delete(project:ProjectEntity) = dao.delete(project)
 }

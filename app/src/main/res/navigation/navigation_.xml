@@ -87,7 +87,11 @@
         android:id="@+id/createProjectFragment"
         android:name="com.example.managerperformancestatistics.presentation.screen.ActionProgect.createProject.CreateProjectFragment"
         android:label="fragment_create_project"
-        tools:layout="@layout/fragment_create_project" />
+        tools:layout="@layout/fragment_create_project" >
+        <action
+            android:id="@+id/action_createProjectFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
     <fragment
         android:id="@+id/metalFragment2"
         android:name="com.example.managerperformancestatistics.presentation.screen.Menu.BottomNavigationFrasments.metal.MetalFragment"
