@@ -6,7 +6,7 @@
 </p>
       
 
-### <div align="centr">My name is Christina, I'm an android developer 👨‍💻</div>  
+### <div align="centr">My name is Christina, I'm an android developer 👨‍💻</div>                     
   
 
 - 🔭 I’m currently working on [Github Project](https://github.com/FroschMadchen/StoreProject) 👁️  
